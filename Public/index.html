@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Class 11 Practice Test</title>
+<title>Class 11 Chemistry Practice Test</title>
 <style>
 /* ==== YOUR ORIGINAL STYLE (unchanged) ==== */
 body {
@@ -196,14 +197,195 @@ select option:nth-child(even){background-color:#e8f4ff;}
 select option:nth-child(odd){background-color:#fff;}
 .hidden{display:none;}
 .inline-topic{display:flex;align-items:center;gap:4px;margin-left:auto;font-size:12px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.register-btn{
+  display:inline-block;
+  padding:10px 16px;
+  background:linear-gradient(135deg, #ff9800, #f57c00);
+  color:white;
+  border-radius:8px;
+  font-size:13px;
+  font-weight:bold;
+  text-decoration:none;
+  box-shadow:0 4px 8px rgba(0,0,0,0.2);
+  transition:0.3s;
+}
+
+.register-btn:hover{
+  background:linear-gradient(135deg, #ffa726, #ef6c00);
+  transform:translateY(-2px);
+  box-shadow:0 6px 12px rgba(0,0,0,0.3);
+}
+
+
+
+
+.luxury-expiry-modal{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.65);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:99999;
+  animation:fadeIn 0.4s ease;
+}
+
+.luxury-expiry-box{
+  width:360px;
+  max-width:92%;
+  background:linear-gradient(160deg,#ffffff,#e0f2f1);
+  border-radius:20px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.4);
+  text-align:center;
+  padding:28px 22px;
+  animation:popupScale 0.4s ease;
+}
+
+.luxury-warning-ring{
+  width:70px;
+  height:70px;
+  margin:auto;
+  border-radius:50%;
+  background:linear-gradient(135deg,#ffebee,#ffcdd2);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  box-shadow:0 0 18px rgba(198,40,40,0.35);
+}
+
+.luxury-warning-icon{
+  font-size:38px;
+  color:#c62828;
+  font-weight:bold;
+}
+
+.luxury-expiry-box h2{
+  margin:14px 0 10px;
+  color:#b71c1c;
+  font-size:23px;
+}
+
+.luxury-expiry-box p{
+  font-size:14px;
+  color:#333;
+  margin:15px 0 22px;
+  line-height:1.6;
+}
+
+.luxury-expiry-buttons{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.luxury-renew-btn{
+  text-decoration:none;
+  background:linear-gradient(135deg,#ff9800,#f57c00);
+  color:white;
+  padding:11px 18px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:bold;
+  box-shadow:0 4px 10px rgba(0,0,0,0.25);
+}
+
+.luxury-later-btn{
+  background:linear-gradient(135deg,#009688,#00796B);
+  color:white;
+  border:none;
+  padding:11px 18px;
+  border-radius:10px;
+  cursor:pointer;
+  font-size:13px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.25);
+}
+
+@keyframes fadeIn{
+ from{opacity:0;}
+ to{opacity:1;}
+}
+
+@keyframes popupScale{
+ from{transform:scale(0.7);}
+ to{transform:scale(1);}
+}
+
+
+
+
 </style>
-</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <body>
+<div id="luxuryModal" class="luxury-expiry-modal">
+  <div class="luxury-expiry-box">
+
+    <div class="luxury-warning-ring">
+      <div class="luxury-warning-icon">⚠</div>
+    </div>
+
+    <h2>Membership Expiry Alert</h2>
+
+    <p id="expiryText">
+      Your access will expire soon.
+    </p>
+
+    <div class="luxury-expiry-buttons">
+      <a href="https://gten-educational-platform.github.io/Class-12/email.html" target="_blank" class="luxury-renew-btn">
+        Renew Access
+      </a>
+
+      <button onclick="closeExpiryModal()" class="luxury-later-btn">
+        Later
+      </button>
+    </div>
+
+  </div>
+</div>
+	
+
+	
 <div id="loginContainer">
   <img src="https://i.ibb.co/WNZTWPwv/LOGO-PNG-2025-fab.png" alt="G10 Educational Platform Logo" />
   
-  <h2>Login to Class-11 Chemistry Practice Test</h2>
+  <h2>Login to Class 10 Practice Test</h2>
   
   <div id="instructionBox">
     <strong>Instructions:</strong>
@@ -215,6 +397,31 @@ select option:nth-child(odd){background-color:#fff;}
     </ul>
   </div>
   <input type="email" id="emailInput" placeholder="Enter your email" required />
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <p id="loginError" style="color:red; font-size:13px; margin-top:5px;"></p>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <button onclick="login()">Login</button>
   <div id="aboutBox">
     <strong>About G10 Educational Platform:</strong><br>
@@ -226,11 +433,11 @@ select option:nth-child(odd){background-color:#fff;}
 <div id="appContainer">
   <div class="header-bar" id="headerBar">
   
-    <h1>Class-11 Chemistry Practice Test</h1>
+    <h1>Class 11 Chemistry Practice Test</h1>
 	
     <div style="display:flex; gap:4px;">
       <button id="backBtn" class="back-btn" onclick="resetAll()">Back</button>
-      <button class="home-btn" onclick="window.location.href='https://gten-educational-platform.github.io/Class-12/Class 11 button.html'">🏠 Home</button>
+      <button class="home-btn" onclick="window.location.href='https://gten-educational-platform.github.io/Class-12/class 10 button.html'">🏠 Home</button>
     </div>
   </div>
 
@@ -249,57 +456,493 @@ select option:nth-child(odd){background-color:#fff;}
 <script>
 const BACKEND_URL="https://practice-test-backend-class-11-chemistry-lj2w.onrender.com";
 
-/* === LOGIN LOGIC === */
-async function login(){
- const email=document.getElementById("emailInput").value.trim().toLowerCase();
- if(!email||!email.includes("@")){
-  alert("Your E.Mail ID is not Registered. For registration call +91 9706380857.");return;
- }
- const res=await fetch(`${BACKEND_URL}/login`,{
-  method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email})
- });
- const data=await res.json();
- if(data.token){
-  localStorage.setItem("studentEmail",email);
-  localStorage.setItem("sessionToken",data.token);
-  document.getElementById("loginContainer").style.display="none";
-  document.getElementById("appContainer").style.display="block";
- } else alert("Login failed. Try again.");
+
+
+
+
+
+
+
+function getFingerprint(){
+  return btoa(
+    navigator.userAgent +
+    screen.width +
+    screen.height +
+    navigator.language +
+    Intl.DateTimeFormat().resolvedOptions().timeZone
+  );
 }
 
-/* === SESSION VALIDATION === */
-window.onload=async function(){
- const savedEmail=localStorage.getItem("studentEmail");
- const token=localStorage.getItem("sessionToken");
- if(!savedEmail||!token)return;
- const res=await fetch(`${BACKEND_URL}/validate`,{
-  method:"POST",headers:{"Content-Type":"application/json"},
-  body:JSON.stringify({email:savedEmail,token})
- });
- const data=await res.json();
- if(data.valid){
-  document.getElementById("loginContainer").style.display="none";
-  document.getElementById("appContainer").style.display="block";
- } else localStorage.clear();
+
+
+
+
+
+
+function showExpiryPopup(expiryDateString){
+  const d = new Date(expiryDateString);
+
+  const formattedDate =
+    String(d.getDate()).padStart(2,'0') + "/" +
+    String(d.getMonth()+1).padStart(2,'0') + "/" +
+    d.getFullYear();
+
+  setTimeout(() => {
+    showExpiryModal(formattedDate);
+  }, 800);
+}
+
+
+
+
+
+
+
+
+
+
+/* === LOGIN LOGIC === */
+async function login() {
+  const email = document.getElementById("emailInput").value.trim().toLowerCase();
+  const errorBox = document.getElementById("loginError");
+
+  if (!email || !email.includes("@")) {
+    errorBox.innerHTML = `
+      Your E-mail ID not found. Click ‘Register’ to generate your login access code (looks like an e-mail).<br><br>
+      <a href="https://gten-educational-platform.github.io/Class-12/email.html" target="_blank" class="register-btn">
+        Register Now
+      </a>
+    `;
+    return;
+  }
+
+  try {
+    const res = await fetch(`${BACKEND_URL}/login`, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({
+        email,
+        fingerprint:getFingerprint()
+      })
+    });
+
+    const data = await res.json();
+
+
+    // DEVICE HARD BLOCKED
+    if(data.blocked){
+      errorBox.innerHTML = `
+        This device has been restricted due to unauthorized attempts.<br><br>
+        However, you can still register to get valid access.<br><br>
+        <a href="https://gten-educational-platform.github.io/Class-12/email.html" target="_blank" class="register-btn">
+          Register Now
+        </a>
+      `;
+      return;
+    }
+
+    // FAKE USER TRAP LOGIN
+    if(data.trap){
+      localStorage.setItem("studentEmail", email);
+      localStorage.setItem("sessionToken", data.token);
+
+      document.getElementById("loginContainer").style.display = "none";
+      document.getElementById("appContainer").style.display = "block";
+      
+
+      showUnauthorizedTrapPopup();
+      return;
+    }
+
+    // EXPIRED GENUINE USER
+    if(data.expired){
+      errorBox.innerHTML = `
+        Your access has expired.<br>
+        Please register again to renew access.<br><br>
+        <a href="https://gten-educational-platform.github.io/Class-12/email.html" target="_blank" class="register-btn">
+          Renew Access
+        </a>
+      `;
+      return;
+    }
+
+    // GENUINE VALID LOGIN
+    if(data.token){
+      localStorage.setItem("studentEmail", email);
+      localStorage.setItem("sessionToken", data.token);
+
+      document.getElementById("loginContainer").style.display = "none";
+      document.getElementById("appContainer").style.display = "block";
+     
+
+      if(data.expiringSoon){
+        showExpiryPopup(data.expiryDate);
+      }
+
+      return;
+    }
+
+
+    // NOT REGISTERED
+    errorBox.innerHTML = `
+      Your E-mail ID not found. Click ‘Register’ to generate your login access code (looks like an e-mail).<br><br>
+      <a href="https://gten-educational-platform.github.io/Class-12/email.html" target="_blank" class="register-btn">
+        Register Now
+      </a>
+    `;
+
+  } catch (err) {
+    console.log(err);
+    errorBox.innerText = "Server error. Try later.";
+  }
+}
+
+
+document.getElementById("emailInput").addEventListener("input", function() {
+  document.getElementById("loginError").innerHTML = "";
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* === Change for 365 SESSION VALIDATION === */
+window.onload = async function() {
+  const email = localStorage.getItem("studentEmail");
+  const token = localStorage.getItem("sessionToken");
+
+  if((email && !token) || (!email && token)){
+    localStorage.clear();
+    location.reload();
+    return;
+  }
+
+  if (!email || !token) return;
+
+  const res = await fetch(`${BACKEND_URL}/validate`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+	
+		
+	
+    body: JSON.stringify({
+ email,
+ token,
+ fingerprint:getFingerprint()
+})
+	
+
+  });
+
+  const data = await res.json();
+
+  if (data.expired) {
+    alert("Your access has expired. Please renew.");
+    localStorage.clear();
+    return;
+  }
+  
+  
+ if(data.trap){
+  document.getElementById("loginContainer").style.display = "none";
+  document.getElementById("appContainer").style.display = "block";
+  
+
+  showUnauthorizedTrapPopup();
+  return;
+}
+  
+
+  if (data.valid) {
+    document.getElementById("loginContainer").style.display = "none";
+    document.getElementById("appContainer").style.display = "block";
+    
+
+    if (data.expiringSoon) {
+      showExpiryPopup(data.expiryDate);
+    }
+
+  } else {
+    localStorage.clear();
+  }
 };
 
-/* === AUTO LOGOUT === */
-setInterval(async()=>{
- const email=localStorage.getItem("studentEmail");
- const token=localStorage.getItem("sessionToken");
- if(!email||!token)return;
- const res=await fetch(`${BACKEND_URL}/validate`,{
-  method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email,token})
- });
- const data=await res.json();
- if(!data.valid){
-  alert("⚠️ You have been logged out because this account was opened on another device.");
-  localStorage.clear();location.reload();
- }
-},5000);
 
-/* === MAIN LOGIC === */
-   const catalog = {};
+
+
+
+
+
+
+// change this for Block complete auto logout if another device logs in
+setInterval(async () => {
+  const email = localStorage.getItem("studentEmail");
+  const token = localStorage.getItem("sessionToken");
+
+  if (!email || !token) return;
+
+  const res = await fetch(`${BACKEND_URL}/validate`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      email,
+      token,
+      fingerprint:getFingerprint()
+    })
+  });
+
+  const data = await res.json();
+
+  if(data.trapExpired){
+    alert("Unauthorized access session expired.");
+    localStorage.clear();
+    location.reload();
+    return;
+  }
+
+  if (data.expired) {
+    alert("Your access has expired. Please renew.");
+    localStorage.clear();
+    location.reload();
+    return;
+  }
+
+  if (!data.valid) {
+    alert("⚠️ You have been logged out because this account was opened on another device.");
+    localStorage.clear();
+    location.reload();
+  }
+}, 5000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  const catalog = {
+  "Topic wise mcq (basic)": {
+              "Chapter 1 - Some Basic Concepts of Chemistry": {
+               "Coming Soon-": "https://class-103.github.io/Class-10-Science-10-E--Che-Rec---Equation/16. Rancidity.html"
+            },
+"Chapter 2 - Structure of Atom": {
+           "Coming Soon-1": "https://class-103.github.io/Class-10-Science-10-E--Acids-Base-and-Salts/13. Are the crystals of salts really dry – Plaster of Paris.html"
+
+			   },
+"Chapter 3 - Classification of Elements and Periodicity in Properties": {
+             "coming Soon": "https://class-103.github.io/Class-10-Science-10-E-Metals-and-Non-metals/13. Corrosion and Prevention of Corrosion.html"
+			   },
+"Chapter 4 - Chemical Bonding and Molecular Structure": {
+             "3. Coming Soon": "https://class-103.gitub.io/Class-10-/.html"
+			   },
+"Chapter 5 - States of Matter: Gases and Liquids": {
+                "1. Coming Soon": "https://class-10.github.io/Class-10-/.html",
+			 "2. Coming Soon": "https://class-103.gitub.io/Class-10-/ .html",
+			 "3. Coming Soon": "https://class-103.gitub.io/Class-10-/.html"
+			   },
+"Chapter 6 - Thermodynamics": {
+                "1. Coming Soon": "https://class-10.github.io/Class-10-/.html",
+			 "2. Coming Soon": "https://class-103.gitub.io/Class-10-/ .html",
+			 "3. Coming Soon": "https://class-103.gitub.io/Class-10-/.html"
+			   },
+"Chapter 7 - Equilibrium": {
+              "Coming Soon": " — focusing on reproductive health.html"
+					},
+"Chapter 8 - Redox Reactions": {
+             "3. Coming Soon": "https://class-103.gitub.io/Class-10-/.html"
+			   },
+"Chapter 9 - Hydrogen": {
+             "3. Coming Soon": "https://class-103.gitub.io/Class-10-/.html"
+			   },
+"Chapter 10 - The s-Block Elements": {
+                "1. Coming Soon": "https://class-10.github.io/Class-10-/.html",
+			 "2. Coming Soon": "https://class-103.gitub.io/Class-10-/ .html",
+			 "3. Coming Soon": "https://class-103.gitub.io/Class-10-/.html"
+			   },
+"Chapter 11 - The p-Block Elements": {
+              "Coming Soon": "of the Heating Effect of Electric Current.html"
+				},
+				
+"Chapter 10 - Organic Chemistry – Some Basic Principles and Techniques": {
+            "3. Coming Soon": "https://class-103.gitub.io/Class-10-/.html"
+			   },
+"Chapter 11 - Hydrocarbons": {
+            "3. Coming Soon": "https://class-103.gitub.io/Class-10-/.html"
+			   },
+	
+"Chapter 11 - Environmental Chemistry": {
+              "1Coming Soon": "https://gten-educational-platform.github.io/Class-11-Physics/motion-1d/basic/uniform-acceleration.html",
+			 "2Coming Soon": "https://gten-educational-platform.github.io/Class-11-Physics/motion-1d/basic/uniform-acceleration.html",
+			 "3Coming Soon": "https://gten-educational-platform.github.io/Class-11-Physics/motion-1d/basic/uniform-acceleration.html"		  
+		  }
+  },
+	
+ "Topic wise mcq (medium) ": {
+                         "Chapter 1 - Some Basic Concepts of Chemistry": {
+               "Coming Soon-": "https://class-103.github.io/Class-10-Science-10-E--Che-Rec---Equation/16. Rancidity.html"
+            },
+"Chapter 2 - Structure of Atom": {
+           "Coming Soon-1": "https://class-103.github.io/Class-10-Science-10-E--Acids-Base-and-Salts/13. Are the crystals of salts really dry – Plaster of Paris.html"
+
+			   },
+"Chapter 3 - Classification of Elements and Periodicity in Properties": {
+             "coming Soon": "https://class-103.github.io/Class-10-Science-10-E-Metals-and-Non-metals/13. Corrosion and Prevention of Corrosion.html"
+			   },
+"Chapter 4 - Chemical Bonding and Molecular Structure": {
+             "3. Coming Soon": "https://class-103.gitub.io/Class-10-/.html"
+			   },
+"Chapter 5 - States of Matter: Gases and Liquids": {
+                "1. Coming Soon": "https://class-10.github.io/Class-10-/.html",
+			 "2. Coming Soon": "https://class-103.gitub.io/Class-10-/ .html",
+			 "3. Coming Soon": "https://class-103.gitub.io/Class-10-/.html"
+			   },
+"Chapter 6 - Thermodynamics": {
+                "1. Coming Soon": "https://class-10.github.io/Class-10-/.html",
+			 "2. Coming Soon": "https://class-103.gitub.io/Class-10-/ .html",
+			 "3. Coming Soon": "https://class-103.gitub.io/Class-10-/.html"
+			   },
+"Chapter 7 - Equilibrium": {
+              "Coming Soon": " — focusing on reproductive health.html"
+					},
+"Chapter 8 - Redox Reactions": {
+             "3. Coming Soon": "https://class-103.gitub.io/Class-10-/.html"
+			   },
+"Chapter 9 - Hydrogen": {
+             "3. Coming Soon": "https://class-103.gitub.io/Class-10-/.html"
+			   },
+"Chapter 10 - The s-Block Elements": {
+                "1. Coming Soon": "https://class-10.github.io/Class-10-/.html",
+			 "2. Coming Soon": "https://class-103.gitub.io/Class-10-/ .html",
+			 "3. Coming Soon": "https://class-103.gitub.io/Class-10-/.html"
+			   },
+"Chapter 11 - The p-Block Elements": {
+              "Coming Soon": "of the Heating Effect of Electric Current.html"
+				},
+				
+"Chapter 10 - Organic Chemistry – Some Basic Principles and Techniques": {
+            "3. Coming Soon": "https://class-103.gitub.io/Class-10-/.html"
+			   },
+"Chapter 11 - Hydrocarbons": {
+            "3. Coming Soon": "https://class-103.gitub.io/Class-10-/.html"
+			   },
+	
+"Chapter 11 - Environmental Chemistry": {
+              "1Coming Soon": "https://gten-educational-platform.github.io/Class-11-Physics/motion-1d/basic/uniform-acceleration.html",
+			 "2Coming Soon": "https://gten-educational-platform.github.io/Class-11-Physics/motion-1d/basic/uniform-acceleration.html",
+			 "3Coming Soon": "https://gten-educational-platform.github.io/Class-11-Physics/motion-1d/basic/uniform-acceleration.html"		  
+		  }
+          },
+	"Topic wise mcq (hard)": {
+               "Chapter 1 - Some Basic Concepts of Chemistry": {
+               "Coming Soon-": "https://class-103.github.io/Class-10-Science-10-E--Che-Rec---Equation/16. Rancidity.html"
+            },
+"Chapter 2 - Structure of Atom": {
+           "Coming Soon-1": "https://class-103.github.io/Class-10-Science-10-E--Acids-Base-and-Salts/13. Are the crystals of salts really dry – Plaster of Paris.html"
+
+			   },
+"Chapter 3 - Classification of Elements and Periodicity in Properties": {
+             "coming Soon": "https://class-103.github.io/Class-10-Science-10-E-Metals-and-Non-metals/13. Corrosion and Prevention of Corrosion.html"
+			   },
+"Chapter 4 - Chemical Bonding and Molecular Structure": {
+             "3. Coming Soon": "https://class-103.gitub.io/Class-10-/.html"
+			   },
+"Chapter 5 - States of Matter: Gases and Liquids": {
+                "1. Coming Soon": "https://class-10.github.io/Class-10-/.html",
+			 "2. Coming Soon": "https://class-103.gitub.io/Class-10-/ .html",
+			 "3. Coming Soon": "https://class-103.gitub.io/Class-10-/.html"
+			   },
+"Chapter 6 - Thermodynamics": {
+                "1. Coming Soon": "https://class-10.github.io/Class-10-/.html",
+			 "2. Coming Soon": "https://class-103.gitub.io/Class-10-/ .html",
+			 "3. Coming Soon": "https://class-103.gitub.io/Class-10-/.html"
+			   },
+"Chapter 7 - Equilibrium": {
+              "Coming Soon": " — focusing on reproductive health.html"
+					},
+"Chapter 8 - Redox Reactions": {
+             "3. Coming Soon": "https://class-103.gitub.io/Class-10-/.html"
+			   },
+"Chapter 9 - Hydrogen": {
+             "3. Coming Soon": "https://class-103.gitub.io/Class-10-/.html"
+			   },
+"Chapter 10 - The s-Block Elements": {
+                "1. Coming Soon": "https://class-10.github.io/Class-10-/.html",
+			 "2. Coming Soon": "https://class-103.gitub.io/Class-10-/ .html",
+			 "3. Coming Soon": "https://class-103.gitub.io/Class-10-/.html"
+			   },
+"Chapter 11 - The p-Block Elements": {
+              "Coming Soon": "of the Heating Effect of Electric Current.html"
+				},
+				
+"Chapter 10 - Organic Chemistry – Some Basic Principles and Techniques": {
+            "3. Coming Soon": "https://class-103.gitub.io/Class-10-/.html"
+			   },
+"Chapter 11 - Hydrocarbons": {
+            "3. Coming Soon": "https://class-103.gitub.io/Class-10-/.html"
+			   },
+	
+"Chapter 11 - Environmental Chemistry": {
+              "1Coming Soon": "https://gten-educational-platform.github.io/Class-11-Physics/motion-1d/basic/uniform-acceleration.html",
+			 "2Coming Soon": "https://gten-educational-platform.github.io/Class-11-Physics/motion-1d/basic/uniform-acceleration.html",
+			 "3Coming Soon": "https://gten-educational-platform.github.io/Class-11-Physics/motion-1d/basic/uniform-acceleration.html"		  
+		  }
+          },
+	"DPP Question And Solution": {
+            "All Chapter Include": {
+              "All Question, Answerkey and Solution Include ": "https://gten-educational-platform.github.io/Class-12/chemistry dpp solution.html"
+            }
+          },
+ "PYQ mains Coming Soon": {
+            "Chapter 1 - Coming Soon": {
+              "Coming Soon": "https://gten-educational-platform.gthub.io/Class-12/new 7.html"
+            }
+          },
+
+"PYQ advance Coming Soon": {
+            "Chapter 1 - Coming Soon": {
+              "2023 Set A Coming Soon": "https://gten-educational-patform.github.io/Class-12/new 7.html",
+              "2022 Set B Coming Soon": "https://gten-educational-platform.github.io/Class-11-Physics/pyq-board/2022-set-b.html"
+    }
+  }
+};
+   
+   
+   
+   
+   
+   
 
 const levelSelect=document.getElementById('levelSelect');
 const chapterSelect=document.getElementById('chapterSelect');
@@ -381,6 +1024,32 @@ if(window.innerWidth<=600){
    bar.scrollBy({left:50*direction,behavior:"smooth"});
   }
  },3000);
+}
+
+
+function showExpiryModal(formattedDate){
+  document.getElementById("expiryText").innerHTML =
+    `Your membership access will expire on <b>${formattedDate}</b>.<br><br>
+     Please renew now to continue uninterrupted premium practice tests.`;
+
+  document.getElementById("luxuryModal").style.display = "flex";
+}
+
+function closeExpiryModal(){
+  document.getElementById("luxuryModal").style.display = "none";
+}
+
+
+
+
+
+function showUnauthorizedTrapPopup(){
+  document.getElementById("expiryText").innerHTML =
+  `Unauthorized verification session activated.<br>
+   Limited preview access granted temporarily.<br><br>
+   This session will close automatically in 5 minutes.`;
+
+  document.getElementById("luxuryModal").style.display = "flex";
 }
 </script>
 </html>
